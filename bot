@@ -128,7 +128,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         $('#dj-console').attr('style','background-image:url(http://i.imgur.com/bLYq7gA.png); display:block; position:absolute; top:15px; width:317px;');
         $('#button-add-this').attr('style','background-image:url(http://i.imgur.com/LxrhgJi.png);');
     $('#meta-frame').css('background-color','transparent');
-    $('#playback .frame-background').hide('.frame-background');
+    $('#playback .frame-background').hide('.transparent');
     $('#playback').css('background-color','transparent');
         $('head').append('<link href="http://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet" type="text/css">'
             + '<style type="text/css" id="TFL-css">'
