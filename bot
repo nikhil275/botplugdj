@@ -120,7 +120,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         $('#room-wheel').css('background','")');
         $('#room-wheel').css('background-repeat','no-repeat');
         $('#room-wheel').css('background-position','500px 275px');
-        $('#meta-frame .frame-background').hide('.frame-background');
+        $('#meta-frame .frame-background').hide('transparent');
         $('#button-dj-waitlist-join').attr('style','background-image:url(http://i.imgur.com/8Minrha.png); display: block;');
         $('#button-dj-waitlist-leave').attr('style','background-image:url(http://i.imgur.com/krkSXRv.png); display: block;');
         $('#button-dj-play').attr('style','background-image:url(http://i.imgur.com/8Minrha.png); display: block;');
