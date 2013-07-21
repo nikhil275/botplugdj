@@ -89,7 +89,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         $('#dj-console').attr('style','background-image:url(http://plug.dj/_/static/images/DJConsole2.8acc86f0.png); display:block;');
         $('#button-add-this').attr('style','background-image:url(http://plug.dj/_/static/images/en/ButtonAddThis.175d7d45.png);');
         $('#meta-frame').show('.frame-background');
-        $('#playback').show('.frame-background');
+        $('#playback').show('.transparent');
         $('#meta-frame').css('background-color','#0A0A0A');
         $('#playback').css('background-color','#0A0A0A');
         Lang.ui.buttonVotePositive = "http://plug.dj/_/static/images/en/ButtonVotePositive.85cfc5a9.png";
@@ -120,7 +120,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         $('#room-wheel').css('background','")');
         $('#room-wheel').css('background-repeat','no-repeat');
         $('#room-wheel').css('background-position','500px 275px');
-        $('#meta-frame .frame-background').hide('transparent');
+        $('#meta-frame .frame-background').hide('.frame-background');
         $('#button-dj-waitlist-join').attr('style','background-image:url(http://i.imgur.com/8Minrha.png); display: block;');
         $('#button-dj-waitlist-leave').attr('style','background-image:url(http://i.imgur.com/krkSXRv.png); display: block;');
         $('#button-dj-play').attr('style','background-image:url(http://i.imgur.com/8Minrha.png); display: block;');
@@ -129,7 +129,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         $('#button-add-this').attr('style','background-image:url(http://i.imgur.com/LxrhgJi.png);');
     $('#meta-frame').css('background-color','transparent');
     $('#playback .frame-background').hide('.transparent');
-    $('#playback').css('background-color','transparent');
+    $('#playback').css('background-color','.frame-background');
         $('head').append('<link href="http://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet" type="text/css">'
             + '<style type="text/css" id="TFL-css">'
             + 'html{background: url("http://i.imgur.com/w9C8MEN.jpg") no-repeat scroll center top #000000;}'
