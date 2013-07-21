@@ -27,9 +27,9 @@ TFLEnhancedModel = require('app/base/Class').extend({
         String.prototype.prepareRegex = function() {
             return this.replace(/([\[\]\^\&\$\.\(\)\?\/\\\+\{\}\|])/g, "\\$1");
         };
-        Lang.ui.buttonVotePositive = "http://i.imgur.com/xA8Pu4k.png";
-        Lang.ui.buttonVotePositiveSelected = "http://i.imgur.com/dnvDuWh.png";
-        Lang.ui.buttonVotePositiveDisabled = "http://i.imgur.com/xA8Pu4k.png";
+        Lang.ui.buttonVotePositive = "";
+        Lang.ui.buttonVotePositiveSelected = "";
+        Lang.ui.buttonVotePositiveDisabled = "";
         Lang.ui.buttonAddThis = "http://i.imgur.com/LxrhgJi.png";
         Lang.ui.buttonAddThisDisabled = "http://i.imgur.com/LxrhgJi.png";
         Lang.ui.buttonSkipThis  = "http://i.imgur.com/o2CQhnj.png";
@@ -125,7 +125,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         $('#button-dj-waitlist-leave').attr('style','background-image:url(http://i.imgur.com/krkSXRv.png); display: block;');
         $('#button-dj-play').attr('style','background-image:url(http://i.imgur.com/8Minrha.png); display: block;');
         $('#button-dj-leave').attr('style','background-image:url(http://i.imgur.com/krkSXRv.png); display: block;');
-        $('#dj-console').attr('style','background-image:url(http://i.imgur.com/bLYq7gA.png); display:block; position:absolute; top:15px; width:317px;');
+        $('#dj-console').attr('style','background-image:url(); display:block; position:absolute; top:15px; width:317px;');
         $('#button-add-this').attr('style','background-image:url(http://i.imgur.com/LxrhgJi.png);');
     $('#meta-frame').css('background-color','transparent');
     $('#playback .frame-background').hide('frame-background');
