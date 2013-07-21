@@ -73,8 +73,8 @@ TFLEnhancedModel = require('app/base/Class').extend({
             onChat: $.proxy(this.onChat, this)
         };
         API.on(API.CHAT,this.proxy.onChat)
-        API.chatLog('<span style="color:#FF0000"><i>Running TFL Enhanced version ' + this.version.major + '.' + this.version.minor + '.' + this.version.patch + '</i></span>');
-        API.chatLog('<span style="color:#FFFF00">Join our facebook group </span>: http://goo.gl/OKI4h')
+        API.chatLog('Curta: https://www.facebook.com/EDTentertainment');
+        API.chatLog('Bot editado por Rafael Moraes')
         if (plugCubed == undefined) $.getScript("http://tatdk.github.io/plugCubed/compiled/plugCubed.min.js")
 
     },
@@ -117,7 +117,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         plugCubed = undefined
     },
     initCSS: function() {
-        $('#room-wheel').css('background','url("https://github.com/Colgate/TFL-Enhanced/raw/master/extras/TFL.gif")');
+        $('#room-wheel').css('background','")');
         $('#room-wheel').css('background-repeat','no-repeat');
         $('#room-wheel').css('background-position','500px 275px');
         $('#meta-frame .frame-background').hide('.frame-background');
