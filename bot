@@ -80,7 +80,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
     },
     close: function(){
         $('#TFL-css').remove();
-        $('#room-wheel').css('background','url("http://plug.dj/_/static/images/room_wheel2.0ea1fb92.png")');
+        $('#room-wheel').css('background','url("")');
         $('#button-vote-negative').show();
         $('#button-dj-waitlist-join').attr('style','background-image:url(http://plug.dj/_/static/images/en/ButtonDJWaitListJoin.fbffc481.png); display: block;');
         $('#button-dj-waitlist-leave').attr('style','background-image:url(http://plug.dj/_/static/images/en/ButtonDJWaitListLeave.5d5847b1.png); display: block;');
