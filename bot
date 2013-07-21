@@ -88,8 +88,8 @@ TFLEnhancedModel = require('app/base/Class').extend({
         $('#button-dj-leave').attr('style','background-image:url(http://plug.dj/_/static/images/en/ButtonDJQuit.1a691d0c.png); display: block;');
         $('#dj-console').attr('style','background-image:url(http://plug.dj/_/static/images/DJConsole2.8acc86f0.png); display:block;');
         $('#button-add-this').attr('style','background-image:url(http://plug.dj/_/static/images/en/ButtonAddThis.175d7d45.png);');
-        $('#meta-frame').show('.frame-background');
-        $('#playback').show('.transparent');
+        $('#meta-frame').show('.transparent');
+        $('#playback').show('.frame-background');
         $('#meta-frame').css('background-color','#0A0A0A');
         $('#playback').css('background-color','#0A0A0A');
         Lang.ui.buttonVotePositive = "http://plug.dj/_/static/images/en/ButtonVotePositive.85cfc5a9.png";
