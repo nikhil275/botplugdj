@@ -194,7 +194,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         } else if (data.type == 'message' && (API.hasPermission(data.fromID, API.ROLE.MANAGER)  || data.fromID == "50aeb077877b9217e2fbff00") && data.message.indexOf('!rave off') === 0) {
             AudienceView.lightsOut();
         }
-     },
+    },
     removeElements: function() {
         require('app/views/room/AudienceView').initRoomElements = function() {}
         require('app/views/room/AudienceView').defaultRoomElements = function(){}
