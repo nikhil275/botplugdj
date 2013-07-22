@@ -1,1 +1,1 @@
-script created by the dark and Colgate 1337 edited by Rafael Moraes
+script created by thedark1337 and Colgate  edited by Rafael Moraes
