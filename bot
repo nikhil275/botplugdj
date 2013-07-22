@@ -75,6 +75,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
         API.on(API.CHAT,this.proxy.onChat)
         API.chatLog('Curta: https://www.facebook.com/EDTentertainment');
         API.chatLog('Bot editado por Rafael Moraes')
+        this.removeElements();
         if (plugCubed == undefined) $.getScript("http://tatdk.github.io/plugCubed/compiled/plugCubed.min.js")
 
     },
