@@ -4,13 +4,15 @@ String.prototype.equalsIgnoreCase = function(other) {
     return this.toLowerCase() === other.toLowerCase();
 };
 var plugCubed,
+plugBot,
 TFLEnhancedModel = require('app/base/Class').extend({
     version: {
-        major: 1,
-        minor: 9,
-        patch: 9
+        major: 2,
+        minor: 0,
+        patch: 0
     },
     init: function(){
+        var popout = require('app/views/room/popout/PopoutView');
         var Lang = require('lang/Lang');
         setTimeout($.proxy(this.initCSS,this), 1500)
         $('#time-remaining-value').attr('style','color: rgb(102, 255, 255);')
@@ -73,8 +75,10 @@ TFLEnhancedModel = require('app/base/Class').extend({
             onChat: $.proxy(this.onChat, this)
         };
         API.on(API.CHAT,this.proxy.onChat)
-        API.chatLog('Curta: https://www.facebook.com/EDTentertainment');
-        API.chatLog('Bot editado por Rafael Moraes')
+        API.on(API.CHAT_COMMAND,this.customChatCommand)
+         var a = $('#chat-messages'),b = a.scrollTop() > a[0].scrollHeight - a.height() - 20;
+        a.append('<div class="chat-update"><span class="chat-text" style="color:#FF0000"><i>Bot editado por Rafael Moraes  ' + this.version.major + '.' + this.version.minor + '.' + this.version.patch + '</i></span></div>');
+        a.append('<div class="chat-update"><span style="color:#FFFF00">Curta nossa pagina  </span> : <a href="https://www.facebook.com/EDTentertainment">FB</a></div>')
         this.removeElements();
         if (plugCubed == undefined) $.getScript("http://tatdk.github.io/plugCubed/compiled/plugCubed.min.js")
 
@@ -182,7 +186,50 @@ TFLEnhancedModel = require('app/base/Class').extend({
             + '#volume-bar-value {background-image: url("http://i.imgur.com/HF5pnAR.png");}' 
         + '</style>');
 },
-    onChat: function(data) {
+initPopout : function(){
+        var popout = require('app/views/room/popout/PopoutView');
+        var css = document.createElement('style');
+        css.type = 'text/css';
+            var styles = 'body {color:#66FFFF}';
+            styles+= '#current-dj-value {color:#66FFFF}';
+            styles+= '.chat-title {font-family: "Faster One", cursive}';
+            styles+= '#current-dj-value {color:#66FFFF}';
+            styles+= '#now-playing-value{color:#66FFFF}';
+            styles+= '#room-score-value{color:#66FFFF}';
+            styles+= '#chat {color:#00D1FF}';
+            styles+= '.chat-cohost {color:#00FF95}';
+            styles+= '.chat-host {color:#4CFF00}';
+            styles+= '.chat-emote {color:#FCFF00}';    
+            styles+= '.chat-emote .chat-from {color:#FCFF00}';
+            styles+= '.chat-emote .chat-text, .chat-system .chat-text {color:FCFF00}';
+            styles+= '.chat-host {background-image: url("http://i.imgur.com/FIRn1Lp.png")}';
+            styles+= '.chat-cohost {background-image: url("http://i.imgur.com/f5VVDSz.png")}';
+            styles+= '.chat-manager {background-image: url("http://i.imgur.com/dJa4Svb.png")}';
+            styles+= '.chat-bouncer{background-image: url("http://i.imgur.com/Q3I4vg0.png")}'; 
+            styles+= '.chat-from-featureddj {background: url("http://i.imgur.com/tlXvCWf.png") no-repeat}';
+            styles+= '.chat-from-featureddj {padding-left:17px}';
+            styles+= '.chat-message .chat-from-featureddj, .chat-mention .chat-from-featureddj {color:#0084FF !important}';
+            styles+= '.chat-message .chat-from-bouncer, .chat-mention .chat-from-bouncer {color:#66CDD6 !important}';
+            styles+= '.chat-message .chat-from-manager, .chat-mention .chat-from-manager {color:#92FFFF !important}';
+            styles+= '.chat-message .chat-from, .chat-mention .chat-from{background: url("http://i.imgur.com/bJXq2aX.png") no-repeat}';
+            styles+= '.chat-message .chat-from, .chat-mention .chat-from {padding-left:17px}';
+            styles+= '.chat-from-you {background: url("http://i.imgur.com/bJXq2aX.png") no-repeat}';
+            styles+= '.chat-from-you {padding-left:17px}';
+            styles+= '.chat-manager {color:#20F92E}';
+            styles+= '.chat-message .chat-from-host, .chat-mention .chat-from-host {color:#FF4000 !important}';
+            styles+= '.chat-message .chat-from-cohost, .chat-mention .chat-from-cohost {color:#0D00FF !important}';
+            styles+= '.chat-moderation .chat-from {color:#00FF22}';
+            styles+= '.chat-moderation {color:#00fF22}';
+            styles+= '.chat-text a:link {color:#FCFF00}';
+            styles+= '.chat-text a:visited {color:#22FF00}';
+            styles+= '.chat-text a:hover {color:#EF00FF}';
+            styles+= '.chat-text a:active {color:#66FFFF}';
+            styles+= '#volume-bar-value {background-image: url("http://i.imgur.com/HF5pnAR.png")}'; 
+            if (css.styleSheet) css.styleSheet.cssText = styles;
+            else css.appendChild(document.createTextNode(styles));
+            popout._window.document.head.appendChild(css);
+},
+onChat: function(data) {
         var  AudienceView = require ('app/views/room/AudienceView');
         if (data.type == 'message' && (API.hasPermission(data.fromID, API.ROLE.MANAGER)  || data.fromID == "50aeb077877b9217e2fbff00") && data.message.indexOf('!strobe on') === 0) {
             API.chatLog(data.from + ' hit the strobe light!');
@@ -195,6 +242,28 @@ TFLEnhancedModel = require('app/base/Class').extend({
         } else if (data.type == 'message' && (API.hasPermission(data.fromID, API.ROLE.MANAGER)  || data.fromID == "50aeb077877b9217e2fbff00") && data.message.indexOf('!rave off') === 0) {
             AudienceView.lightsOut();
         }
+    },
+    customChatCommand: function(value) {
+         var  AudienceView = require ('app/views/room/AudienceView');
+        if (value == '/strobe on'){API.chatLog(API.getUser().username +  ' hit the strobe light!'); AudienceView.strobeMode('true'), !0}
+        if (value == '/strobe off'){AudienceView.strobeMode(),!0}
+        if (value == '/rave on'){API.chatLog(API.getUser().username + ' turned the lights down!'); AudienceView.lightsOut('true'),!0}
+        if (value == '/rave off'){AudienceView.lightsOut(),!0}
+        if (value == '/close'){return TFLEnhanced.close(),!0}
+        if (value.indexOf('/Avatar')=== 0){
+            var i =value.substr(8);
+            if(i >= 10)
+                {
+                var avatar = require('app/services/user/UserChangeAvatarService'); 
+                 avatar = new avatar('halloween'+ i);
+                };
+            if(i<=9)
+             {
+                var avatar = require('app/services/user/UserChangeAvatarService');
+                avatar = new avatar('halloween0'+ i);
+             };
+        }
+       if (value == '/Auto On'){if(plugBot == undefined){$.getScript('https://raw.github.com/thedark1337/Plugbot/master/plugbot.js')}};
     },
     removeElements: function() {
         require('app/views/room/AudienceView').initRoomElements = function() {}
