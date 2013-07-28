@@ -32,9 +32,9 @@ TFLEnhancedModel = require('app/base/Class').extend({
         Lang.ui.buttonVotePositive = "http://plug.dj/_/static/images/en/ButtonVotePositive.85cfc5a9.png";
         Lang.ui.buttonVotePositiveSelected = "http://plug.dj/_/static/images/en/ButtonVotePositiveSelected.c9947cb3.png";
         Lang.ui.buttonVotePositiveDisabled = "http://plug.dj/_/static/images/en/ButtonVotePositiveDisabled.ce7c40b3.png";
-        Lang.ui.buttonAddThis = "https://photos-3.dropbox.com/t/0/AAA6pQcCw12hgL3aAy2vyt5oqvAXcoSWw5xidqBVtsQyCA/12/136323263/png/32x32/3/1374588000/0/2/AddThis.png/BC-G7T6Bb2iAb9SWwBJ4MKqCHPp3NQCd3AfuxllvHtQ?size=1024x768";
-        Lang.ui.buttonAddThisDisabled = "https://photos-3.dropbox.com/t/0/AAA6pQcCw12hgL3aAy2vyt5oqvAXcoSWw5xidqBVtsQyCA/12/136323263/png/32x32/3/1374588000/0/2/AddThis.png/BC-G7T6Bb2iAb9SWwBJ4MKqCHPp3NQCd3AfuxllvHtQ?size=1024x768";
-        Lang.ui.buttonSkipThis  = "https://photos-2.dropbox.com/t/0/AABiuKbTuGwdOWszXKuafOsAdDtYk6Q9mJBtFMygjRD6VQ/12/136323263/png/32x32/3/1374588000/0/2/SkipThis.png/ANB-t_gLjBr4CWc677IcryU-kYzWCccXQoRRO5TNmbY?size=1024x768";
+        Lang.ui.buttonAddThis = "http://i.imgur.com/IwFRCVd.png";
+        Lang.ui.buttonAddThisDisabled = "http://i.imgur.com/IwFRCVd.png";
+        Lang.ui.buttonSkipThis  = "http://i.imgur.com/kL3MvJm.png";
         Lang.rollover.fans = "Fans"
         Lang.messages.fanEnter = "Your fan %NAME% just joined the room!"
         Lang.messages.fanOf = "You are now a fan of %NAME%."
