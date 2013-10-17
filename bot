@@ -167,7 +167,7 @@ TFLEnhancedModel = require('app/base/Class').extend({
             + '.chat-host {background-image: url("http://i.imgur.com/FIRn1Lp.png");}'
             + '.chat-cohost {background-image: url("http://i.imgur.com/njajqVG.png");}'
             + '.chat-manager{background-image: url("http://i.imgur.com/dJa4Svb.png");}'
-            + '.chat-bouncer{background-image: url("http://i.imgur.com/Q3I4vg0.png");}' 
+            + '.chat-bouncer{background-image: url("http://png-1.findicons.com/files/icons/2354/dusseldorf/16/star.png");}' 
             + '.chat-from-featureddj {background: url("http://i.imgur.com/tlXvCWf.png") no-repeat;}'
             + '.chat-from-featureddj {padding-left:17px;}'
             + '.chat-message .chat-from-featureddj, .chat-mention .chat-from-featureddj {color:#E90E82 !important;}'
